@@ -1,120 +1,139 @@
 import Image from "next/image";
 // import styles from "./page.module.css";
-import "./homepage.css"
+import "./homepage.css";
 
+const category = [
+  {
+    title: "Action Toys",
+    image: "/Media/action_toy.jpg",
+  },
+  {
+    title: "Anime T-shirts",
+    image: "/Media/animetshirt.webp",
+  },
+  {
+    title: "Light Boxes and Lamps",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsk-b7rxreXDr7YGUI8xYwRI-CBrUQJJ_o6g0cgT6XWRTnaX8kuYny0P2GcwYq9JHHlxs&usqp=CAU",
+  },
+  {
+    title: "Bobble Heads",
+    image: "https://m.media-amazon.com/images/I/51cNCmEOESL.jpg",
+  },
+
+];
 
 export default function Home() {
   return (
-  <div className="homeBase">
-        <div className="trending">
-          <div>
-            <img src="" alt="" />
-          </div>
-        </div>
-        <div className="offer">Existing offers</div>
-        <h3>Shop By Category</h3>
-        <div className="category">
-          <div>
-            <div>
-              <img src="/Media/Mens.png" alt="" />
-            </div>
-            <h3>Mens Wear</h3>
-          </div>
-          <div>
-            <div>
-              <img src="/Media/women.jpeg" alt="" />
-            </div>
-            <h3>Womens Wear</h3>
-          </div>
-          <div>
-            <div>
-              <img src="/Media/kids.png"alt="" />
-            </div>
-            <h3>Kids Wear</h3>
-          </div>
-          <div>
-            <div>
-              <img src="/Media/Todler.png" alt="" />
-            </div>
-            <h3>Toddler Wear</h3>
-          </div>
-        </div>
-        <h3>Shop By Brand</h3>
-        <div className="brand">
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-          <div>
-            <img src="/Media/nike.jpg" alt="" />
-            <h4>Nike</h4>
-          </div>
-        </div>
-        <h3>Shop By Price Range</h3>
-        <div className="pricerange category">
-          <div>
-            <h3>Upto 99</h3>
-          </div>
-          <div>
-            <h3>Upto 199</h3>
-          </div>
-          <div>
-            <h3>Upto 299</h3>
-          </div>
-          <div>
-            <h3>Upto 399</h3>
-          </div>
-          <div>
-            <h3>Upto 499</h3>
-          </div>
-          <div>
-            <h3>Upto 599</h3>
-          </div>
-          <div>
-            <h3>Upto 699</h3>
-          </div>
-          <div>
-            <h3>Upto 799</h3>
-          </div>
-          <div>
-            <h3>Upto 899</h3>
-          </div>
-          <div>
-            <h3>Upto 999</h3>
-          </div>
-          <div>
-            <h3>Upto 1099</h3>
-          </div>
-          <div>
-            <h3>Upto 2099</h3>
-          </div>
-          <div>
-            <h3>Upto 3099</h3>
-          </div>
-          <div>
-            <h3>Upto 4099</h3>
-          </div>
+    <div className="homeBase">
+      <div className="trending">
+        <div>
+          <img src="" alt="" />
         </div>
       </div>
+      <div className="offer">
+        <p>
+          Welcome to Gift Gallary! Discover unique gifts for every occasion –
+          from handcrafted treasures to thoughtful keepsakes. Whether you're
+          celebrating a birthday, anniversary, or just want to make someone
+          smile, we have the perfect gift waiting for you.
+        </p>
+        <p>
+          <center>
+            <h4>Your one-stop shop for all things special!</h4>
+          </center>
+          🎁 Made with love, chosen with care.
+        </p>
+      </div>
+      <h3>Shop By Category</h3>
+      <div className="category">
+        {category.map((item) => {
+          return (
+            <div>
+              <div>
+                <img src={item.image} alt="" />
+              </div>
+              <h3>{item.title}</h3>
+            </div>
+          );
+        })}       
+       
+      </div>
+      <h3>Shop By Brand</h3>
+      <div className="brand">
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+        <div>
+          <img src="/Media/nike.jpg" alt="" />
+          <h4>Nike</h4>
+        </div>
+      </div>
+      <h3>Shop By Price Range</h3>
+      <div className="pricerange category">
+        <div>
+          <h3>Upto 99</h3>
+        </div>
+        <div>
+          <h3>Upto 199</h3>
+        </div>
+        <div>
+          <h3>Upto 299</h3>
+        </div>
+        <div>
+          <h3>Upto 399</h3>
+        </div>
+        <div>
+          <h3>Upto 499</h3>
+        </div>
+        <div>
+          <h3>Upto 599</h3>
+        </div>
+        <div>
+          <h3>Upto 699</h3>
+        </div>
+        <div>
+          <h3>Upto 799</h3>
+        </div>
+        <div>
+          <h3>Upto 899</h3>
+        </div>
+        <div>
+          <h3>Upto 999</h3>
+        </div>
+        <div>
+          <h3>Upto 1099</h3>
+        </div>
+        <div>
+          <h3>Upto 2099</h3>
+        </div>
+        <div>
+          <h3>Upto 3099</h3>
+        </div>
+        <div>
+          <h3>Upto 4099</h3>
+        </div>
+      </div>
+    </div>
   );
 }

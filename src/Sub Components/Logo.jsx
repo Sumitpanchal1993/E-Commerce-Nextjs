@@ -10,7 +10,7 @@ function Logo() {
       <div className="topLogo">
         <Link href='/' >
           <span className="material-symbols-outlined">Storefront</span>
-          <h4>My Market</h4>
+          <h4>Gift Gallery</h4>
         </Link>
       </div>
     </>

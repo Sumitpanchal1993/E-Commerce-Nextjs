@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
             <aside>
               <LeftNav />
             </aside>
-            {children}
+            <section>{children}</section>
           </main>
           <footer>
             <Footer />

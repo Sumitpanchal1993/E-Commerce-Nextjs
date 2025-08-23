@@ -28,12 +28,14 @@ body {
 
 ::-webkit-scrollbar {
   background: transparent;
-  height: 0.5rem;
+  height: 0.4rem;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--purple);
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 /* To be  removed */
@@ -42,8 +44,18 @@ span {
 }
 
 
-main{
-    display: flex;    
+main {
+  display: flex;
+  overflow: hidden;
+}
+
+main > aside {
+  flex-shrink: 0;
+}
+
+main > section {
+  flex: 1;
+  min-width: 0;
 }
 
 .mybtn{
