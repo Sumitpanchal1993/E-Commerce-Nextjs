@@ -41,8 +41,9 @@ span {
   color: var(--purple);
 }
 
+
 main{
-    display: flex;
+    display: flex;    
 }
 
 .mybtn{
@@ -58,3 +59,4 @@ main{
 .mybtn:hover{
     background: var(--indigo);
 }
+
