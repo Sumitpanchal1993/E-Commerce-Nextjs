@@ -13,13 +13,32 @@ const category = [
   },
   {
     title: "Light Boxes and Lamps",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsk-b7rxreXDr7YGUI8xYwRI-CBrUQJJ_o6g0cgT6XWRTnaX8kuYny0P2GcwYq9JHHlxs&usqp=CAU",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsk-b7rxreXDr7YGUI8xYwRI-CBrUQJJ_o6g0cgT6XWRTnaX8kuYny0P2GcwYq9JHHlxs&usqp=CAU",
   },
   {
     title: "Bobble Heads",
     image: "https://m.media-amazon.com/images/I/51cNCmEOESL.jpg",
   },
+];
 
+const brand = [
+  {
+    title: "Nike",
+    image: "/Media/nike.jpg",
+  },
+  {
+    title: "Adidas",
+    image: "/Media/Adidas_logo.png",
+  },
+  {
+    title: "Puma",
+    image: "/Media/puma.png",
+  },
+  {
+    title: "Reebok",
+    image: "/Media/Adidas_logo.png",
+  },
 ];
 
 export default function Home() {
@@ -38,10 +57,7 @@ export default function Home() {
           smile, we have the perfect gift waiting for you.
         </p>
         <p>
-          <center>
-            <h4>Your one-stop shop for all things special!</h4>
-          </center>
-          🎁 Made with love, chosen with care.
+          <h4>🎁 Made with love, chosen with care.</h4>
         </p>
       </div>
       <h3>Shop By Category</h3>
@@ -55,39 +71,20 @@ export default function Home() {
               <h3>{item.title}</h3>
             </div>
           );
-        })}       
-       
+        })}
       </div>
       <h3>Shop By Brand</h3>
       <div className="brand">
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
-        <div>
-          <img src="/Media/nike.jpg" alt="" />
-          <h4>Nike</h4>
-        </div>
+        {brand.map((item) => {
+          return (
+            <div>
+              <div>
+                <img src={item.image} alt="" />
+              </div>
+              <h3>{item.title}</h3>
+            </div>
+          );
+        })}  
       </div>
       <h3>Shop By Price Range</h3>
       <div className="pricerange category">
