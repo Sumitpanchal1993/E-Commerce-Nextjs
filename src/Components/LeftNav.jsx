@@ -9,7 +9,7 @@ import './LeftNav.css';
 const menuList = [
   { title: 'Dashboard', icon: 'dashboard', link: '/' },
   { title: 'All Products', icon: 'deployed_code', link: 'all_products' },
-  { title: 'Orders', icon: 'home_storage', link: '/order' },
+  { title: 'Orders', icon: 'home_storage', link: '/orders' },
   { title: 'Favorite', icon: 'favorite', link: '/favourite' },
   { title: 'New Arrivals', icon: 'verified', link: '/newarrivals' }
 ]
