@@ -1,0 +1,16 @@
+.navbar{    
+    background: white;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    z-index:9;  
+    margin: 10px;    
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  @media screen and (max-width:786px) {
+    .navbar{
+      margin:0;
+    }
+  }
