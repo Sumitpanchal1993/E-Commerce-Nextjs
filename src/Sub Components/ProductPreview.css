@@ -1,0 +1,112 @@
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-container {
+  width: 90%;
+  max-width: 900px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 1.5rem;
+  position: relative;
+  gap: 1.5rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #eee;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.preview-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.thumbnail-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.thumbnail.active,
+.thumbnail:hover {
+  border: 2px solid #333;
+}
+
+.preview-right {
+  flex: 1;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: green;
+  margin: 1rem 0;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.action-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary {
+  background-color: #6200ee;
+  color: white;
+}
+
+.secondary {
+  background-color: #f5f5f5;
+  color: #000;
+}
