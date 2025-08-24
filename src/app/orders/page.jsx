@@ -13,8 +13,8 @@ function Orders() {
     <>
       <div className="orderBase">
         <div>
-          {redux_cart.map((item) => {
-            return <h1>Added Orders</h1>;
+          {redux_cart.map((item, id) => {
+            return <h1 key={id}>Added Orders</h1>;
           })}
         </div>
       </div>

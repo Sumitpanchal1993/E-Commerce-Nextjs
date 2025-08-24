@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import styles from "./page.module.css";
 import "./homepage.css";
+import Card from "@/Sub Components/Card";
 
 const category = [
   {
@@ -56,35 +57,27 @@ export default function Home() {
           celebrating a birthday, anniversary, or just want to make someone
           smile, we have the perfect gift waiting for you.
         </p>
-          <h4>🎁 Made with love, chosen with care.</h4>
+        <h4>🎁 Made with love, chosen with care.</h4>
       </div>
+    <hr />
       <h3>Shop By Category</h3>
       <div className="category">
-        {category.map((item) => {
+        {category.map((item, id) => {
           return (
-            <div>
-              <div>
-                <img src={item.image} alt="" />
-              </div>
-              <h3>{item.title}</h3>
-            </div>
+            <Card key={id} image={item.image} title={item.title} />
+          );
+        })}
+
+      </div>
+      <hr />
+      <h3>Shop By Age Group</h3>
+      <div className="category">
+         {brand.map((item, id) => {
+          return (
+            <Card key={id} image={item.image} title={item.title} />
           );
         })}
       </div>
-      <h3>Shop By Brand</h3>
-      <div className="brand">
-        {brand.map((item) => {
-          return (
-            <div>
-              <div>
-                <img src={item.image} alt="" />
-              </div>
-              <h3>{item.title}</h3>
-            </div>
-          );
-        })}  
-      </div>
-     
     </div>
   );
 }

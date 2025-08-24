@@ -12,20 +12,19 @@
 
 /* ----------Shop by category ------------ */
 
-.category,
-.brand {
+.category{
   display: flex;
   gap: 1rem;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: flex-start; /* Don't space items across full width */
   border-radius: 1rem;
   padding: 1rem;
-  overflow-x: scroll;
-  
+  overflow-x: auto; /* Use auto instead of scroll for cleaner behavior */
+  scroll-behavior: smooth;
 }
 
-.category > div,
-.brand > div {
+.category > div{
+  flex: 0 0 250px; /* Prevent shrinking, set fixed width */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,12 +53,10 @@
   .category {
     overflow: scroll;
     margin: 10px 0;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-.brand img {
-  width: 8rem;
-}
 
 .offer p{
     font-size: 1.2rem;
