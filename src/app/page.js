@@ -46,7 +46,7 @@ export default function Home() {
     <div className="homeBase">
       <div className="trending">
         <div>
-          <img src="" alt="" />
+          <img src="#" alt="" />
         </div>
       </div>
       <div className="offer">
@@ -56,9 +56,7 @@ export default function Home() {
           celebrating a birthday, anniversary, or just want to make someone
           smile, we have the perfect gift waiting for you.
         </p>
-        <p>
           <h4>🎁 Made with love, chosen with care.</h4>
-        </p>
       </div>
       <h3>Shop By Category</h3>
       <div className="category">
@@ -86,51 +84,7 @@ export default function Home() {
           );
         })}  
       </div>
-      <h3>Shop By Price Range</h3>
-      <div className="pricerange category">
-        <div>
-          <h3>Upto 99</h3>
-        </div>
-        <div>
-          <h3>Upto 199</h3>
-        </div>
-        <div>
-          <h3>Upto 299</h3>
-        </div>
-        <div>
-          <h3>Upto 399</h3>
-        </div>
-        <div>
-          <h3>Upto 499</h3>
-        </div>
-        <div>
-          <h3>Upto 599</h3>
-        </div>
-        <div>
-          <h3>Upto 699</h3>
-        </div>
-        <div>
-          <h3>Upto 799</h3>
-        </div>
-        <div>
-          <h3>Upto 899</h3>
-        </div>
-        <div>
-          <h3>Upto 999</h3>
-        </div>
-        <div>
-          <h3>Upto 1099</h3>
-        </div>
-        <div>
-          <h3>Upto 2099</h3>
-        </div>
-        <div>
-          <h3>Upto 3099</h3>
-        </div>
-        <div>
-          <h3>Upto 4099</h3>
-        </div>
-      </div>
+     
     </div>
   );
 }

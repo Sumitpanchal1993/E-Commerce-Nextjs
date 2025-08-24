@@ -4,9 +4,9 @@
 
 .search button {
   position: absolute;
-  top: 30%;
-  left: 5%;
-
+  top: 8px;
+  right: 15px;
+  background:transparent;
   border: none;
   cursor: pointer;  
 }

@@ -46,7 +46,6 @@ span {
 
 main {
   display: flex;
-  overflow: hidden;
 }
 
 main > aside {
