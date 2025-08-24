@@ -52,8 +52,8 @@ export default function Home() {
       </div>
       <div className="offer">
         <p>
-          Welcome to Gift Gallary! Discover unique gifts for every occasion –
-          from handcrafted treasures to thoughtful keepsakes. Whether you're
+          Welcome to Gift Gallary! Discover unique gifts for every occasion
+          from handcrafted treasures to thoughtful keepsakes. Whether you are
           celebrating a birthday, anniversary, or just want to make someone
           smile, we have the perfect gift waiting for you.
         </p>
