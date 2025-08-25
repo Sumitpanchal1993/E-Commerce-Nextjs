@@ -1,12 +1,14 @@
 
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./ProductCard.css";
 import { ADD_TO_CART } from "../Redux/Reducer/Redux_Cart";
 import { useDispatch } from "react-redux";
+import ProductPreview from "./PrductPreview";
 
 function ProductCard({ item, handleProductDetail }) {
   const dispatchAction = useDispatch();
+  const [showPreview, setShowPreview] = useState(false);
 
   return (
     <>
@@ -14,6 +16,7 @@ function ProductCard({ item, handleProductDetail }) {
         <div
           className="productimage"
           onClick={() => {
+            setShowPreview(true);
             handleProductDetail(item);
           }}
         >
@@ -50,6 +53,12 @@ function ProductCard({ item, handleProductDetail }) {
           </div>
         </div>
       </div>
+      {showPreview && (
+        <ProductPreview
+          product={item}
+          onClose={() => setShowPreview(false)}
+        />
+      )}
     </>
   );
 }
