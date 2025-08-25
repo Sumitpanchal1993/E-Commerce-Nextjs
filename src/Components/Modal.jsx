@@ -1,0 +1,36 @@
+// components/Modal.jsx
+import React from 'react';
+import './Modal.css'; // Import your custom CSS
+
+function Modal({ isOpen, title, onClose, onOk, onCancel, children }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-container">
+        {/* Close Button */}
+        <button className="modal-close" onClick={onClose} aria-label="Close modal">
+          &times;
+        </button>
+
+        {/* Title */}
+        <h2 className="modal-title">{title}</h2>
+
+        {/* Content */}
+        <div className="modal-content">{children}</div>
+
+        {/* Footer Buttons */}
+        <div className="modal-footer">
+          <button className="modal-button cancel" onClick={onCancel || onClose}>
+            Cancel
+          </button>
+          <button className="modal-button ok" onClick={onOk}>
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Modal;
