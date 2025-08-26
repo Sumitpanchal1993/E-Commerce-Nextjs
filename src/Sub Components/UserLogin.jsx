@@ -5,25 +5,31 @@ import NavUserDetail from "./NavUserDetail";
 import { useSelector } from "react-redux";
 import Modal from "@/Components/Modal";
 import Login from "@/Sub Components/Login";
+import { IS_NOT_LOGIN } from "../Redux/Reducer/Redux_Login";
+import { useDispatch } from "react-redux";
 
 function UserLogin() {
   
    const [isModalOpen, setIsModalOpen] = useState(false);
-  const [userLogin, setUserLogin] = useState(false);
-  const login = useSelector((state)=> state.redux_login_state);
-  console.log(login);
-  const handleLogin = () => {
-    setUserLogin(true);
-  };
+   const login = useSelector((state)=> state.redux_login_state);
+  //  const [userLogin, setUserLogin] = useState(login);
+     const dispatchAction = useDispatch();
+
+  console.log("ReduxStore", login);
+  // console.log("Component status ", userLogin);
+  // const handleLogin = () => {
+  //   setUserLogin(true);
+  // };
 
   const handleLogout = () => {
-    setUserLogin(false);
+    dispatchAction(IS_NOT_LOGIN(true));
+    // setUserLogin(false);
   };
 
   return (
     <>
       <div className="headerRHS">
-        {userLogin ? (
+        {login ? (
           <NavUserDetail logout={handleLogout} />
         ) : (
           <Link href="#">
