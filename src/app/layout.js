@@ -2,9 +2,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import TopNav from "@/Components/TopNav";
-import Provider from "../Redux/Provider";
+// import Provider from "../Redux/Provider";
 import LeftNav from "@/Components/LeftNav";
 import Footer from "@/Components/Footer";
+import { GlobalProvider } from "@/Store/GlobalStore";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider>
+        {/* <Provider> */}
+        <GlobalProvider>
           <header>
             <TopNav />
           </header>
@@ -44,7 +46,8 @@ export default function RootLayout({ children }) {
           <footer>
             <Footer />
           </footer>
-        </Provider>
+        </GlobalProvider>
+        {/* </Provider> */}
       </body>
     </html>
   );

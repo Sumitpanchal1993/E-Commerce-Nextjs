@@ -2,14 +2,16 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useGlobalStore } from "@/Store/GlobalStore";
+// import { useSelector } from "react-redux";
 
 function NavUserDetail({logout}) {
+  const {cartItems} = useGlobalStore()
     const [userName, setUserName] = useState("Sumit");
     const [userID, setUserID] = useState("Sumitpanchal08");
 
 
-  const cartItem = useSelector((state)=> state.redux_cart);
+  // const cartItem = useSelector((state)=> state.redux_cart);
 
 
     const dropdown = ()=>{
@@ -34,7 +36,7 @@ function NavUserDetail({logout}) {
     <Link href='/my_cart'>
       <img src="/Media/Cart.png" alt="" />
     </Link>
-    {cartItem.length!==0 &&<span>{cartItem.length}</span>}
+    {cartItems.length!==0 &&<span>{cartItems.length}</span>}
     </button>
       <button className="dropdown_btn" onClick={dropdown}>
         <span className="material-symbols-outlined">arrow_drop_down</span>

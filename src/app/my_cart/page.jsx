@@ -3,12 +3,12 @@ import React from "react";
 import "./Cart.css";
 import CartItem from "../../Sub Components/CartItem";
 import Bill from "../../Sub Components/Bill";
-import { useSelector } from "react-redux";
+import { useGlobalStore } from "@/Store/GlobalStore";
+// import { useSelector } from "react-redux";
 
 function Cart() {
-  const getStoreData = useSelector((state) => {
-    return state.redux_cart;
-  });
+  // const getStoreData = useSelector((state) => {return state.redux_cart; });
+  const {cartItems: getStoreData} = useGlobalStore();
 
   return (
     <div className="cartBase">

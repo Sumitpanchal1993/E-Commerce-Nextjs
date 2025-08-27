@@ -2,12 +2,14 @@
 "use client";
 import React, { useState } from "react";
 import "./ProductCard.css";
-import { ADD_TO_CART } from "../Redux/Reducer/Redux_Cart";
-import { useDispatch } from "react-redux";
+// import { ADD_TO_CART } from "../Redux/Reducer/Redux_Cart";
+// import { useDispatch } from "react-redux";
 import ProductPreview from "./PrductPreview";
+import { useGlobalStore } from "@/Store/GlobalStore";
 
 function ProductCard({ item, handleProductDetail }) {
-  const dispatchAction = useDispatch();
+  const {ADD_TO_CART, isLoggedIn} = useGlobalStore();
+  // const dispatchAction = useDispatch();
   const [showPreview, setShowPreview] = useState(false);
 
   return (
@@ -45,7 +47,13 @@ function ProductCard({ item, handleProductDetail }) {
             <button
               className="mybtn"
               onClick={() => {
-                dispatchAction(ADD_TO_CART(item));
+                if(isLoggedIn){
+                  ADD_TO_CART(item);
+
+                }
+                else{
+                  alert("Please login to add items to cart");
+                }
               }}
             >
               Add To Cart

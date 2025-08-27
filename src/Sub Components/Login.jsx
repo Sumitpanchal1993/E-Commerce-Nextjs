@@ -1,16 +1,18 @@
 "use client";
 import React, { useRef, useState } from "react";
 import "./Login.css";
-import { useSelector } from "react-redux";
-import { IS_LOGIN } from "../Redux/Reducer/Redux_Login";
-import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+// import { IS_LOGIN } from "../Redux/Reducer/Redux_Login";
+// import { useDispatch } from "react-redux";
+import { useGlobalStore } from "@/Store/GlobalStore";
 
-function Login() {
+function Login({closeModal}) {  
+  const { isLoggedIn, setIsLoggedIn } = useGlobalStore();
   const username = useRef();
   const userPassword = useRef();
-  const dispatchAction = useDispatch();
+  // const dispatchAction = useDispatch();
   const [userdata, setUserdata] = useState({});
-  const login = useSelector((state) => state.redux_login_state);
+  // const login = useSelector((state) => state.redux_login_state);
 
   const onChangeHandler = (val) => {
     let pTag = document.getElementById("errMsg");
@@ -71,13 +73,16 @@ function Login() {
           <button
             className="mybtn"
             onClick={() => {
-              dispatchAction(IS_LOGIN(true));
+              if (!isLoggedIn){
+                setIsLoggedIn(true);
+                closeModal(false);
+              }
             }}
           >
             Login
           </button>
         </div>
-        <button className="mybtn">SignUp</button>
+        <button className="mybtn">Sign Up</button>
       </form>
     </>
   );

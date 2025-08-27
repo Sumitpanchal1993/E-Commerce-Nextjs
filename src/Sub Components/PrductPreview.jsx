@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './ProductPreview.css';
+import { useGlobalStore } from '@/Store/GlobalStore';
 
 const ProductPreview = ({ product, onClose }) => {
+  const{isLoggedIn, ADD_TO_CART} = useGlobalStore();
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
 
   return (
@@ -30,7 +32,15 @@ const ProductPreview = ({ product, onClose }) => {
           <p className="description">{product.description}</p>
 
           <div className="action-buttons">
-            <button className="btn primary">Add to Cart</button>
+            <button className="btn primary" onClick={() => {
+                if(isLoggedIn){
+                  ADD_TO_CART(item);
+
+                }
+                else{
+                  alert("Please login to add items to cart");
+                }
+              }}>Add to Cart</button>
             <button className="btn secondary">Buy Now</button>
           </div>
         </div>

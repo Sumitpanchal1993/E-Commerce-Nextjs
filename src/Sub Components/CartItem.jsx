@@ -2,11 +2,13 @@
 "use client";
 import React from "react";
 import "./CartItem.css";
-import { REMOVE_FROM_CART } from "../Redux/Reducer/Redux_Cart";
-import { useDispatch } from "react-redux";
+import { useGlobalStore } from "@/Store/GlobalStore";
+// import { REMOVE_FROM_CART } from "../Redux/Reducer/Redux_Cart";
+// import { useDispatch } from "react-redux";
 
 function CartItem({itemData}) {
-  const dispatchAction = useDispatch();
+  const { REMOVE_FROM_CART } = useGlobalStore();
+  // const dispatchAction = useDispatch();
   return (
     <>
 
@@ -54,7 +56,7 @@ function CartItem({itemData}) {
           <span><strong>14 days</strong></span> 
           <span>return available</span>
         </div>
-        <div><button className="mybtn" onClick={()=>{dispatchAction(REMOVE_FROM_CART(itemData))}}>Remove</button></div>
+        <div><button className="mybtn" onClick={()=>{REMOVE_FROM_CART(itemData)}}>Remove</button></div>
       </div>
     </div>
     </>
