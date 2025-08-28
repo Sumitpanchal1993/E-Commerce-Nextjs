@@ -1,10 +1,11 @@
 import React from 'react'
+import AdminPanel from '@/Components/AdminPanel'
 
 function page() {
   return (
-    <div>
-        <h1>New Arrivals</h1>
-    </div>
+    <>
+    <AdminPanel/>
+    </>
   )
 }
 

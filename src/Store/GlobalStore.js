@@ -12,6 +12,7 @@ export const GlobalProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
@@ -35,7 +36,7 @@ export const GlobalProvider = ({ children }) => {
     error,
     setError,
     loading, 
-    setLoading,
+    setLoading,isAdmin, setIsAdmin,
   };
 
   return (
