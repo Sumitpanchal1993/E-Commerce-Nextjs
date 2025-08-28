@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 // import styles from "./page.module.css";
 import "./homepage.css";
 import Card from "@/Sub Components/Card";
 import { useGlobalStore } from "@/Store/GlobalStore";
-import { use } from "react";
+import Error from "@/Components/Error";
+
 
 const category = [
   {
@@ -45,8 +47,11 @@ const ageGroup = [
 ];
 
 export default function Home() {
+  const {error} = useGlobalStore();
  
   return (
+    <>
+    {error&&<Error onRetry/>}
     <div className="homeBase">
       <div className="trending">
         <div>
@@ -76,11 +81,12 @@ export default function Home() {
       <h3>Shop By Age Group</h3>
       <div className="category">
          {ageGroup.map((item, id) => {
-          return (
-            <Card key={id} image={item.image} title={item.title} />
-          );
-        })}
+           return (
+             <Card key={id} image={item.image} title={item.title} />
+            );
+          })}
       </div>
     </div>
+          </>
   );
 }

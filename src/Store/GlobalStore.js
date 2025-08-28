@@ -10,6 +10,8 @@ const GlobalStore = createContext();
 export const GlobalProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
@@ -29,7 +31,11 @@ export const GlobalProvider = ({ children }) => {
     cartItems,
     setCartItems,
     ADD_TO_CART,
-    REMOVE_FROM_CART
+    REMOVE_FROM_CART,
+    error,
+    setError,
+    loading, 
+    setLoading,
   };
 
   return (

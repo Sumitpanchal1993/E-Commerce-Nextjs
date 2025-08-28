@@ -1,0 +1,108 @@
+.signupFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f9fafb;
+  min-height: 80vh;
+}
+
+.signupForm {
+  background-color: white;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signupForm h2 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.signupForm input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.signupForm button[type="submit"] {
+  padding: 12px;
+  background-color: #1976d2;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signupForm button[type="submit"]:hover {
+  background-color: #1259a5;
+}
+
+.errorText {
+  color: #b91c1c;
+  font-size: 14px;
+  text-align: center;
+}
+
+.successText {
+  color: #15803d;
+  font-size: 14px;
+  text-align: center;
+}
+
+.formFooter {
+  text-align: center;
+  font-size: 14px;
+}
+
+.formFooter a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.formFooter a:hover {
+  text-decoration: underline;
+}
+
+.socialLogin {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.socialButtons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.socialButtons .google {
+  background-color: #db4437;
+}
+
+.socialButtons .facebook {
+  background-color: #3b5998;
+}
+
+.socialButtons .github {
+  background-color: #333;
+}

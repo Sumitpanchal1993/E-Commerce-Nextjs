@@ -1,4 +1,94 @@
-.loginBase{
+.loginBase {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginBase h2 {
+  text-align: center;
+  color: #333;
+}
+
+.loginBase div {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginBase label {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+.loginBase input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.loginBase input:focus {
+  border-color: #1976d2;
+}
+
+.mybtn {
+  padding: 12px;
+  font-size: 15px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mybtn:hover {
+  background-color: #1259a5;
+}
+
+.mybtn.secondary {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.mybtn.secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.formLink {
+  text-align: right;
+  font-size: 13px;
+}
+
+.formLink a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.formLink a:hover {
+  text-decoration: underline;
+}
+
+.errorText {
+  color: #b91c1c;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+
+
+/* .loginBase{
     width: 85%;
     padding: 1rem;
     display: flex;
@@ -21,4 +111,4 @@
     outline: none;
     border: none;
     border-radius: 0.5rem;
-}
+} */

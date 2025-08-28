@@ -2,33 +2,59 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../../Sub Components/ProductCard";
 import "./AllProducts.css";
+import { useGlobalStore } from "@/Store/GlobalStore";
+import Loader from "@/Components/Loader";
+
 
 export default function AllProducts() {
+  const {loading, setLoading,error, setError, } = useGlobalStore();
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
-  const [loading, setLoading] = useState(false);
 
   const limit = 10;
 
-  const fetchProducts = async (pageNum) => {
-    setLoading(true);
-    try {
-      const skip = pageNum * limit;
-      const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
-      const data = await response.json();
-      setProducts(data.products);
-      setTotal(data.total);
-    } catch (err) {
-      console.error("Failed to fetch products:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+useEffect(() => {
+  fetchProducts(page);``
+}, [page]);
 
-  useEffect(() => {
-    fetchProducts(page);
-  }, [page]);
+const fetchProducts = async (pageNum) => {
+  setLoading(true);
+  setError(null); // reset previous error
+
+  try {
+    const skip = pageNum * limit;
+    const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
+    const data = await response.json();
+    setProducts(data.products);
+    setTotal(data.total);
+  } catch (err) {
+    console.error("Fetch error:", err);
+    setError("Failed to load products. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
+
+  // const fetchProducts = async (pageNum) => {
+  //   setLoading(true);
+  //   try {
+  //     const skip = pageNum * limit;
+  //     const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
+  //     const data = await response.json();
+  //     setProducts(data.products);
+  //     setTotal(data.total);
+  //   } catch (err) {
+  //     console.error("Failed to fetch products:", err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchProducts(page);
+  // }, [page]);
 
   const handleProductDetail = (item) => {
     console.log("This product is clicked:", item);
@@ -37,9 +63,7 @@ export default function AllProducts() {
   return (
     <>
       <div className="allProductsBase">
-        {loading ? (
-          <p className="loadingText">Loading products...</p>
-        ) : (
+        {loading ? <Loader/> : (
           products.map((item) => (
             <ProductCard
               item={item}
