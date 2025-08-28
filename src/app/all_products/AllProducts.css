@@ -1,19 +1,61 @@
-.allProductsBase{
-    display: grid;
-    grid-template-columns: repeat(4, auto); 
-    padding: 1rem;
+.allProductsBase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  gap: 20px;
+  padding: 1rem;
+  justify-items: center;
 }
 
-@media screen and (max-width:1024px) {
-    .allProductsBase{
-        grid-template-columns: repeat(3, auto);
-    }
+@media screen and (max-width: 1024px) {
+  .allProductsBase {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
 }
 
-@media screen and (max-width:786px) {
-    .allProductsBase{
-        display: grid;
-        grid-template-columns: repeat(1, auto); 
-        padding: 1rem;
-    }
+@media screen and (max-width: 768px) {
+  .allProductsBase {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .allProductsBase {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    justify-items: center;
+  }
+}
+
+.loadingText {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+.paginationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.paginationControls button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.paginationControls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginationControls span {
+  font-weight: bold;
+  font-size: 16px;
 }

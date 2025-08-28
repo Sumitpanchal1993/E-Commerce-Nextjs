@@ -8,12 +8,12 @@ import Footer from "@/Components/Footer";
 import { GlobalProvider } from "@/Store/GlobalStore";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  // variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  // variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 

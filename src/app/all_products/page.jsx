@@ -3,37 +3,111 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../../Sub Components/ProductCard";
 import "./AllProducts.css";
 
-
 export default function AllProducts() {
-    const [fetchData, setFetchData] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((rawdata) => rawdata.json())
-      .then((data) => setFetchData(data.products))
-      .catch((error) => {
-        console.warn(error.message);
-      });
-  }, []);
+  const limit = 10;
 
+  const fetchProducts = async (pageNum) => {
+    setLoading(true);
+    try {
+      const skip = pageNum * limit;
+      const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
+      const data = await response.json();
+      setProducts(data.products);
+      setTotal(data.total);
+    } catch (err) {
+      console.error("Failed to fetch products:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const handleProductDetail = (item) => {
-    console.log("this product is clicked", item);
+  useEffect(() => {
+    fetchProducts(page);
+  }, [page]);
+
+  const handleProductDetail = (item) => {
+    console.log("This product is clicked:", item);
   };
 
   return (
     <>
       <div className="allProductsBase">
-        {fetchData.map((item) => {
-          return (
+        {loading ? (
+          <p className="loadingText">Loading products...</p>
+        ) : (
+          products.map((item) => (
             <ProductCard
               item={item}
               key={item.id}
               handleProductDetail={handleProductDetail}
             />
-          );
-        })}
+          ))
+        )}
+      </div>
+
+      <div className="paginationControls">
+        <button
+          onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
+          disabled={page === 0}
+        >
+          ⬅ Previous
+        </button>
+        <span> Page {page + 1} </span>
+        <button
+          onClick={() => {
+            if ((page + 1) * limit < total) setPage((prev) => prev + 1);
+          }}
+          disabled={(page + 1) * limit >= total}
+        >
+          Next ➡
+        </button>
       </div>
     </>
   );
 }
+
+
+// "use client";
+// import React, { useEffect, useState } from "react";
+// import ProductCard from "../../Sub Components/ProductCard";
+// import "./AllProducts.css";
+
+
+// export default function AllProducts() {
+//     const [fetchData, setFetchData] = useState([]);
+
+//     useEffect(() => {
+//     fetch("https://dummyjson.com/products")
+//       .then((rawdata) => rawdata.json())
+//       .then((data) => setFetchData(data.products))
+//       .catch((error) => {
+//         console.warn(error.message);
+//       });
+//   }, []);
+
+
+//     const handleProductDetail = (item) => {
+//     console.log("this product is clicked", item);
+//   };
+
+//   return (
+//     <>
+//       <div className="allProductsBase">
+//         {fetchData.map((item) => {
+//           return (
+//             <ProductCard
+//               item={item}
+//               key={item.id}
+//               handleProductDetail={handleProductDetail}
+//             />
+//           );
+//         })}
+//       </div>
+//     </>
+//   );
+// }
