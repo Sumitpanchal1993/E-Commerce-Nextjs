@@ -8,20 +8,33 @@ const GlobalStore = createContext();
 
 // Create provider
 export const GlobalProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
+  const [cartItems, setCartItems] = useState([]);
+  
+
 
   const toggleDarkMode = () => setDarkMode(prev => !prev);
 
+  // function for userLoginstate
+  const handleLogout = () => {
+    // dispatchAction(IS_NOT_LOGIN(true));
+    setIsLoggedIn(false);
+  };
+
+  //functions to modify cart
   const ADD_TO_CART = (item) => {
     setCartItems(prevItems => [...prevItems, item]);
   };
 
   const REMOVE_FROM_CART = (item) => {
     setCartItems(prevItems => prevItems.filter(i => i.id !== item.id));
+  };
+
+  const duplicateCartItems = (item) => {
+    setCartItems(prevItems => [...prevItems, item]);
   };
 
 
@@ -36,7 +49,7 @@ export const GlobalProvider = ({ children }) => {
     error,
     setError,
     loading, 
-    setLoading,isAdmin, setIsAdmin,
+    setLoading,isAdmin, setIsAdmin,handleLogout
   };
 
   return (

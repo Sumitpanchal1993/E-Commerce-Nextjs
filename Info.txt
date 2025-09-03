@@ -1,0 +1,30 @@
+Functions: 
+    1.  Login
+    2.  Logout
+    3.  Add to Cart
+    4.  Remove Form Cart
+    5.  Buy now
+    6.  Search
+    7.  User Signup
+    8.  Admin Login
+    9.  Add dynamicity to nav user
+    10. Same Product multipletime added tocartthen increse the qty not as new product
+    11. on clicking out the dropdown or the popus must closed
+    12  product card detail me nam bada ho to ...  me aye
+    13. Forgot username and password form
+
+CSS (desktop and Mobile)
+    1.  Buttons look
+    2.  Main content ki css
+    3.  Nav userdropdown css
+    4.  Add light and dark theme
+    5.  Product card  css  thik karna h
+    6.  Add primary and secondary btn css
+
+Pages
+    1.  Order page to be confirmed
+    2.  Footer modify
+    3.  User Profile
+    4.  Order page me Tabs add karna Inprogress, completed, return/ rejected.
+    5.  Remove favourite option
+

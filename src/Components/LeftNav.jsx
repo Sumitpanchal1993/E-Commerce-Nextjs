@@ -31,8 +31,10 @@ function LeftNav() {
               </div>
             )
           })}
+          
 
             {isAdmin && (<div className='menuopt'>
+          <hr/>
               <Link href='/adminpanel'>
               <span className="material-symbols-outlined">lock</span>
               <p>Admin Panel</p> 
