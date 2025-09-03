@@ -52,13 +52,13 @@ main {
   display: flex;
   /* align-items: center; */
   justify-content: space-between;
-  background: red;
+  /* background: red; */
   min-height: max-content
 }
 
 main > aside {
   /* flex-shrink: 0; */
-  background: greenyellow;
+  /* background: greenyellow; */
   min-height: max-content;
   
 }
@@ -66,12 +66,12 @@ main > aside {
 main > section {
   /* flex: 1; */
   width: 100%;
-  background: orange;
+  /* background: orange; */
   overflow: hidden;
 }
 
 footer {
-  background: rgb(255, 1, 221);
+  /* background: rgb(255, 1, 221); */
   padding: 3px;
 }
 .foundation {
@@ -189,6 +189,10 @@ footer {
   main > section {
     width: 100%;  
 } 
+.foundation {
+  margin: 0;
+  border-radius: 0;
+}
 footer {
   padding: 0;
 }

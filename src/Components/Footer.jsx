@@ -3,7 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div className="footerBase">
+    <div className=" foundation footerBase">
       <div>
         <h5>ONLINE SHOPPING FOR WOMEN: MYNTRA ALL THE WAY</h5>
         <p>

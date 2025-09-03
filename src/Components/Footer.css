@@ -1,8 +1,5 @@
 .footerBase{
-overflow: hidden;
-background: white;
 padding: 0.5rem;
-margin: 10px;
 border-radius: 1rem;
 display: flex;
 flex-direction: column;
@@ -24,3 +21,9 @@ gap: 1rem;
     margin: 0.5rem 0;
 }
 
+@media screen and (max-width: 480px){
+    .footerBase{
+        /* padding: 0.5rem; */
+        border-radius: 1rem 1rem 0 0;
+    }
+}
