@@ -8,7 +8,10 @@ function page() {
 
   return (
     <>
+    <div className='homeBase'>
+
     <UserSignupForm/>
+    </div>
     </>
   );
 }

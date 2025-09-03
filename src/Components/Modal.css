@@ -74,7 +74,12 @@
 
 
 
-
+@media (max-width: 768px) {
+  .modal-container {
+    max-height: 90vh;
+    overflow: auto;
+  }
+}
 
 @media (max-width: 480px) {
   .modal-container {

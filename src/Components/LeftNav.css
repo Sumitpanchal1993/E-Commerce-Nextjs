@@ -59,6 +59,7 @@
     min-height: auto;
     border-radius: 0px;
     /* background: green; */
+    z-index: 1000;
   }
 
   .menuopt span{

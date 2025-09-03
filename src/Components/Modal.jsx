@@ -5,11 +5,17 @@ import './Modal.css'; // Import your custom CSS
 function Modal({ isOpen, title, onClose, onOk, onCancel, children }) {
   if (!isOpen) return null;
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-container">
         {/* Close Button */}
-        <button className="modal-close .spbtn-secondary" onClick={onClose} aria-label="Close modal">
+        <button className="modal-close " onClick={onClose} aria-label="Close modal">
           &times;
         </button>
 
