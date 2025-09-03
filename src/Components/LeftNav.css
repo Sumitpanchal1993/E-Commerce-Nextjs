@@ -49,18 +49,25 @@
   .leftOption{
     position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: 0;
+    padding: 0;
     box-shadow: 0 0 5px 0 var(--lgred);
     min-height: auto;
-    border-radius: none;
+    border-radius: 0px;
+    /* background: green; */
   }
 
+  .menuopt span{
+    font-size: 2rem;
+  }
 
   .menuopt>a>p {
     display: none;
   }
+
+  
 }
