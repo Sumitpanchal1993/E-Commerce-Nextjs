@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-// import styles from "./page.module.css";
 import "./homepage.css";
 import Card from "@/Sub Components/Card";
 import { useGlobalStore } from "@/Store/GlobalStore";

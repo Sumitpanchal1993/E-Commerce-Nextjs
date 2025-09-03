@@ -113,7 +113,7 @@ function AdminPanel() {
           </div>
         )}
 
-        <button type="submit">Add Product</button>
+        <button className='spbtn-primary' type="submit">Add Product</button>
       </form>
     </div>
   );

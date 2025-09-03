@@ -56,7 +56,7 @@ function CartItem({itemData}) {
           <span><strong>14 days</strong></span> 
           <span>return available</span>
         </div>
-        <div><button className="mybtn" onClick={()=>{REMOVE_FROM_CART(itemData)}}>Remove</button></div>
+        <div><button className="spbtn-primary" onClick={()=>{REMOVE_FROM_CART(itemData)}}>Remove</button></div>
       </div>
     </div>
     </>

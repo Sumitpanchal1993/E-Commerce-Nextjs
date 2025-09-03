@@ -86,7 +86,7 @@ function UserSignupForm() {
           onChange={handleChange}
         />
 
-        <button type="submit">Sign Up</button>
+        <button className="spbtn-primary" type="submit">Sign Up</button>
 
         <div className="formFooter">
           <p>Already have an account? <a href="/login">Login here</a></p>

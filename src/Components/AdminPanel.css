@@ -38,19 +38,7 @@
   min-height: 80px;
 }
 
-.adminForm button {
-  padding: 12px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  font-size: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-}
 
-.adminForm button:hover {
-  background-color: #1259a5;
-}
 
 .imagePreview {
   text-align: center;

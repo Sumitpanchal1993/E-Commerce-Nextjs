@@ -56,19 +56,78 @@ main > section {
   min-width: 0;
 }
 
-.mybtn{
-    padding: 0.5rem;
-    background: var(--purple);
-    border-radius: 0.6rem;
-    gap: 5px;
-    cursor: pointer;
-    color: white;
-    border: none;
+/* button'css */
+/* Primary Buttons */
+.spbtn-primary {
+  padding: 10px 20px;
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.spbtn-primary:hover {
+  background-color: var(--indigo);
+}
+.spbtn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Primary Buttons */
+.spbtn-secondary {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.spbtn-secondary:hover {
+  background-color: #e0e0e0;
+}
+.spbtn-secondary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.mybtn:hover{
-    background: var(--indigo);
+/* Danger Button */
+.spbtn-danger {
+  padding: 10px 20px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.spbtn-danger:hover {
+  background-color: #dc2626;
+}
+.spbtn-danger:disabled {
+  background-color: #faa;
+  cursor: not-allowed;
 }
 
-
-
+/* Warning Buttons */
+.spbtn-warning {
+  padding: 10px 20px;
+  background-color: #ffdd57;
+  color: #332200;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.spbtn-warning:hover {
+  background-color: #ffe584;
+}
+.spbtn-warning:disabled {
+  background-color: #ffd466;
+  cursor: not-allowed;
+}

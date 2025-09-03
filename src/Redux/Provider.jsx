@@ -1,7 +1,8 @@
-"use client";
-import { Provider as ReduxProvider } from "react-redux";
-import store from "./Store";
+// No in use for now but setting done
+// "use client";
+// import { Provider as ReduxProvider } from "react-redux";
+// import store from "./Store";
 
-export default function Provider({ children }) {
-  return <ReduxProvider store={store}>{children}</ReduxProvider>;
-}
+// export default function Provider({ children }) {
+//   return <ReduxProvider store={store}>{children}</ReduxProvider>;
+// }

@@ -42,29 +42,6 @@
   border-color: #1976d2;
 }
 
-.mybtn {
-  padding: 12px;
-  font-size: 15px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.mybtn:hover {
-  background-color: #1259a5;
-}
-
-.mybtn.secondary {
-  background-color: #f3f4f6;
-  color: #333;
-}
-
-.mybtn.secondary:hover {
-  background-color: #e5e7eb;
-}
 
 .formLink {
   text-align: right;

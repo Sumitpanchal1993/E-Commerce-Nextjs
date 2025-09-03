@@ -29,17 +29,4 @@
   margin-bottom: 20px;
 }
 
-.retryButton {
-  background-color: #ef4444;
-  color: white;
-  padding: 10px 20px;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
 
-.retryButton:hover {
-  background-color: #dc2626;
-}

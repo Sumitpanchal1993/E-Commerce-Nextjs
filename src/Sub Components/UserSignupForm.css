@@ -32,20 +32,7 @@
   font-size: 14px;
 }
 
-.signupForm button[type="submit"] {
-  padding: 12px;
-  background-color: #1976d2;
-  color: white;
-  font-size: 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
 
-.signupForm button[type="submit"]:hover {
-  background-color: #1259a5;
-}
 
 .errorText {
   color: #b91c1c;

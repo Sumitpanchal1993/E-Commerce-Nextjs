@@ -9,7 +9,7 @@ function Modal({ isOpen, title, onClose, onOk, onCancel, children }) {
     <div className="modal-overlay">
       <div className="modal-container">
         {/* Close Button */}
-        <button className="modal-close" onClick={onClose} aria-label="Close modal">
+        <button className="modal-close .spbtn-secondary" onClick={onClose} aria-label="Close modal">
           &times;
         </button>
 
@@ -21,10 +21,10 @@ function Modal({ isOpen, title, onClose, onOk, onCancel, children }) {
 
         {/* Footer Buttons */}
         <div className="modal-footer">
-          <button className="modal-button cancel" onClick={onCancel || onClose}>
+          <button className="spbtn-secondary" onClick={onCancel || onClose}>
             Cancel
           </button>
-          <button className="modal-button ok" onClick={onOk}>
+          <button className="spbtn-primary" onClick={onOk}>
             OK
           </button>
         </div>

@@ -30,7 +30,7 @@ function UserLogin() {
           <NavUserDetail logout={handleLogout} />
         ) : (
           <Link href="#">
-            <button className="mybtn" onClick={() => setIsModalOpen(true)}>
+            <button className="spbtn-primary" onClick={() => setIsModalOpen(true)}>
               Login
             </button>
           </Link>

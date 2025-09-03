@@ -66,7 +66,7 @@ function Bill() {
         </div>
 
         <div>
-          <button className="mybtn" onClick={onPlaceOrder}>
+          <button className="spbtn-primary" onClick={onPlaceOrder}>
             Place Order
           </button>
         </div>

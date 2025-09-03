@@ -7,7 +7,6 @@
   border: none;
   background: transparent;
   margin: 0;
-  padding: 0;
 }
 
 .dropdown_btn img {
@@ -40,6 +39,10 @@
   color: grey;
 }
 
+.userDetail:hover {
+  cursor: pointer;
+  background: var(--lgrey);
+}
 .dropdown {
   display: none;
   position: absolute;

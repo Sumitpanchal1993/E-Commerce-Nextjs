@@ -37,7 +37,7 @@ function ProductCard({ item, handleProductDetail }) {
           </div>
           <div className="button">
             <button
-              className="mybtn"
+              className="spbtn-primary"
               onClick={() => {
                 console.log("Bought");
               }}
@@ -45,7 +45,7 @@ function ProductCard({ item, handleProductDetail }) {
               Buy Now
             </button>
             <button
-              className="mybtn"
+              className="spbtn-primary"
               onClick={() => {
                 if(isLoggedIn){
                   ADD_TO_CART(item);

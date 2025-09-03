@@ -5,56 +5,38 @@ import "./AllProducts.css";
 import { useGlobalStore } from "@/Store/GlobalStore";
 import Loader from "@/Components/Loader";
 
-
 export default function AllProducts() {
-  const {loading, setLoading,error, setError, } = useGlobalStore();
+  const { loading, setLoading, error, setError } = useGlobalStore();
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [total, setTotal] = useState(0);
 
   const limit = 10;
 
-useEffect(() => {
-  fetchProducts(page);``
-}, [page]);
+  useEffect(() => {
+    fetchProducts(page);
+    ``;
+  }, [page]);
 
-const fetchProducts = async (pageNum) => {
-  setLoading(true);
-  setError(null); // reset previous error
+  const fetchProducts = async (pageNum) => {
+    setLoading(true);
+    setError(null); // reset previous error
 
-  try {
-    const skip = pageNum * limit;
-    const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
-    const data = await response.json();
-    setProducts(data.products);
-    setTotal(data.total);
-  } catch (err) {
-    console.error("Fetch error:", err);
-    setError("Failed to load products. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
-
-
-  // const fetchProducts = async (pageNum) => {
-  //   setLoading(true);
-  //   try {
-  //     const skip = pageNum * limit;
-  //     const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
-  //     const data = await response.json();
-  //     setProducts(data.products);
-  //     setTotal(data.total);
-  //   } catch (err) {
-  //     console.error("Failed to fetch products:", err);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchProducts(page);
-  // }, [page]);
+    try {
+      const skip = pageNum * limit;
+      const response = await fetch(
+        `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
+      );
+      const data = await response.json();
+      setProducts(data.products);
+      setTotal(data.total);
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setError("Failed to load products. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleProductDetail = (item) => {
     console.log("This product is clicked:", item);
@@ -63,7 +45,9 @@ const fetchProducts = async (pageNum) => {
   return (
     <>
       <div className="allProductsBase">
-        {loading ? <Loader/> : (
+        {loading ? (
+          <Loader />
+        ) : (
           products.map((item) => (
             <ProductCard
               item={item}
@@ -76,6 +60,7 @@ const fetchProducts = async (pageNum) => {
 
       <div className="paginationControls">
         <button
+          className="spbtn-primary"
           onClick={() => setPage((prev) => Math.max(prev - 1, 0))}
           disabled={page === 0}
         >
@@ -83,6 +68,7 @@ const fetchProducts = async (pageNum) => {
         </button>
         <span> Page {page + 1} </span>
         <button
+          className="spbtn-primary"
           onClick={() => {
             if ((page + 1) * limit < total) setPage((prev) => prev + 1);
           }}
@@ -94,44 +80,3 @@ const fetchProducts = async (pageNum) => {
     </>
   );
 }
-
-
-// "use client";
-// import React, { useEffect, useState } from "react";
-// import ProductCard from "../../Sub Components/ProductCard";
-// import "./AllProducts.css";
-
-
-// export default function AllProducts() {
-//     const [fetchData, setFetchData] = useState([]);
-
-//     useEffect(() => {
-//     fetch("https://dummyjson.com/products")
-//       .then((rawdata) => rawdata.json())
-//       .then((data) => setFetchData(data.products))
-//       .catch((error) => {
-//         console.warn(error.message);
-//       });
-//   }, []);
-
-
-//     const handleProductDetail = (item) => {
-//     console.log("this product is clicked", item);
-//   };
-
-//   return (
-//     <>
-//       <div className="allProductsBase">
-//         {fetchData.map((item) => {
-//           return (
-//             <ProductCard
-//               item={item}
-//               key={item.id}
-//               handleProductDetail={handleProductDetail}
-//             />
-//           );
-//         })}
-//       </div>
-//     </>
-//   );
-// }

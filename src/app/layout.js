@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* <Provider> */}
+        {/* <Provider> for reduxstore */}
         <GlobalProvider>
           <header>
             <TopNav />

@@ -9,7 +9,7 @@ const ProductPreview = ({ product, onClose }) => {
   return (
     <div className="preview-overlay">
       <div className="preview-container">
-        <button className="close-btn" onClick={onClose}>✖</button>
+        <button className="close-btn spbtn-secondary" onClick={onClose}>✖</button>
 
         <div className="preview-left">
           <img src={selectedImage} alt="Main" className="main-image" />
@@ -32,7 +32,7 @@ const ProductPreview = ({ product, onClose }) => {
           <p className="description">{product.description}</p>
 
           <div className="action-buttons">
-            <button className="btn primary" onClick={() => {
+            <button className="spbtn-primary" onClick={() => {
                 if(isLoggedIn){
                   ADD_TO_CART(item);
 
@@ -41,7 +41,7 @@ const ProductPreview = ({ product, onClose }) => {
                   alert("Please login to add items to cart");
                 }
               }}>Add to Cart</button>
-            <button className="btn secondary">Buy Now</button>
+            <button className="spbtn-secondary">Buy Now</button>
           </div>
         </div>
       </div>
