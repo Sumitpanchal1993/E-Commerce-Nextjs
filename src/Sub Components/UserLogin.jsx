@@ -10,7 +10,7 @@ import Login from "@/Sub Components/Login";
 import { useGlobalStore } from "@/Store/GlobalStore";
 
 function UserLogin() {
-  const { isLoggedIn, setIsLoggedIn } = useGlobalStore();
+  const { isLoggedIn, setIsLoggedIn, handleLogout,  } = useGlobalStore();
    const [isModalOpen, setIsModalOpen] = useState(false);
   //  const login = useSelector((state)=> state.redux_login_state);
   //  const [userLogin, setUserLogin] = useState(login);
@@ -21,10 +21,7 @@ function UserLogin() {
   //   setUserLogin(true);
   // };
 
-  const handleLogout = () => {
-    // dispatchAction(IS_NOT_LOGIN(true));
-    setIsLoggedIn(false);
-  };
+
 
   return (
     <>
