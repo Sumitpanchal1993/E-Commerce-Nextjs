@@ -44,7 +44,7 @@ export default function AllProducts() {
 
   return (
     <>
-      <div className="allProductsBase">
+      <div className="foundation allProductsBase">
         {loading ? (
           <Loader />
         ) : (

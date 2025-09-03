@@ -1,19 +1,16 @@
-'use client';
-import React from 'react'
+"use client";
+import React from "react";
 
-import UserSignupForm from '@/Sub Components/UserSignupForm';
-
+import UserSignupForm from "@/Sub Components/UserSignupForm";
 
 function page() {
-
   return (
     <>
-    <div className='homeBase'>
-
-    <UserSignupForm/>
-    </div>
+      <div className="foundation">
+        <UserSignupForm />
+      </div>
     </>
   );
 }
 
-export default page
+export default page;

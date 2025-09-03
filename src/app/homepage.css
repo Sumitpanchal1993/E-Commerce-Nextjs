@@ -1,20 +1,12 @@
-.homeBase {
-  overflow: hidden;
-  background: white;
-  padding: 0.5rem 2rem;
-  margin: 10px;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.homeBase{
   text-align: center;
+  max-width: 100%;
 }
 
 /* ----------Shop by category ------------ */
 
 .category{
   display: flex;
-  gap: 1rem;
   text-align: center;
   justify-content: flex-start; /* Don't space items across full width */
   border-radius: 1rem;

@@ -40,21 +40,6 @@
   margin: 20px 0;
 }
 
-/* .paginationControls button {
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-.paginationControls button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 .paginationControls span {
   font-weight: bold;
   font-size: 16px;

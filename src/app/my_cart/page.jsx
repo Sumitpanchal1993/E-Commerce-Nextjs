@@ -11,7 +11,7 @@ function Cart() {
   const {cartItems: getStoreData} = useGlobalStore();
 
   return (
-    <div className="cartBase">
+    <div className=" foundation cartBase">
       <div>
         {getStoreData.map((item) => {
           return <CartItem itemData={item} key={item.id} />;

@@ -10,7 +10,7 @@ const {cartItems} = useGlobalStore();
   // console.log(redux_cart);
   return (
     <>
-      <div className="orderBase">
+      <div className="foundation">
         <div>
           {cartItems.map((item, id) => {
             return <h1 key={id}>Added Orders</h1>;

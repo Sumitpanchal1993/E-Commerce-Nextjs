@@ -24,6 +24,10 @@ const category = [
     title: "Bobble Heads",
     image: "https://m.media-amazon.com/images/I/51cNCmEOESL.jpg",
   },
+  {
+    title: "Bobble Heads",
+    image: "https://m.media-amazon.com/images/I/51cNCmEOESL.jpg",
+  },
 ];
 
 const ageGroup = [
@@ -51,7 +55,7 @@ export default function Home() {
   return (
     <>
     {error&&<Error onRetry/>}
-    <div className="homeBase">
+    <div className="foundation homeBase">
       <div className="trending">
         <div>
           <img src="#" alt="" />
