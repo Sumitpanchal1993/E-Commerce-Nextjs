@@ -1,11 +1,8 @@
-
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import './LeftNav.css';
 import { useGlobalStore } from '@/Store/GlobalStore';
-
-
 
 const menuList = [
   { title: 'Dashboard', icon: 'dashboard', link: '/' },
@@ -13,37 +10,42 @@ const menuList = [
   { title: 'Orders', icon: 'home_storage', link: '/orders' },
   { title: 'Favorite', icon: 'favorite', link: '/favourite' },
   { title: 'New Arrivals', icon: 'verified', link: '/newarrivals' },
-  // { title: 'Admin Panel', icon: 'lock', link: '/adminpanel' },
-]
+];
 
 function LeftNav() {
-  const {isAdmin} = useGlobalStore();  
+  const { isAdmin } = useGlobalStore();
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapse = () => setCollapsed(!collapsed);
+
   return (
-    <>
-        <div className='leftOption'>
-          {menuList.map((item, index) => {
-            return (
-              <div className='menuopt' key={index} >
-                <Link href={item.link}>
-                  <span className="material-symbols-outlined">{item.icon}</span>
-                  <p>{item.title}</p>
-                </Link>
-              </div>
-            )
-          })}
-          
+    <div className={`leftNavWrapper ${collapsed ? '' : 'collapsed'}`}>
+      <div className="toggle-button" onClick={toggleCollapse}>
+        <span className="material-symbols-outlined">
+          {!collapsed ? 'chevron_right' : 'chevron_left'}
+        </span>
+      </div>
 
-            {isAdmin && (<div className='menuopt'>
-          <hr/>
-              <Link href='/adminpanel'>
+      <nav className="menu">
+        {menuList.map((item, index) => (
+          <Link href={item.link} key={index} className="menuItem">
+            <span className="material-symbols-outlined">{item.icon}</span>
+            <p className="menuLabel">{item.title}</p>
+          </Link>
+        ))}
+
+        {isAdmin && (
+          <>
+            <hr />
+            <Link href='/adminpanel' className="menuItem">
               <span className="material-symbols-outlined">lock</span>
-              <p>Admin Panel</p> 
-              </Link>
-              </div>)}
-        </div>
-
-    </>
-  )
+              <p className="menuLabel">Admin Panel</p>
+            </Link>
+          </>
+        )}
+      </nav>
+    </div>
+  );
 }
 
-export default LeftNav
+export default LeftNav;
