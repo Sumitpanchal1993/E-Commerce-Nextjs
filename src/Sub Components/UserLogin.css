@@ -3,13 +3,13 @@
   font-size: 2rem;
 }
 
-.dropdown_btn {
+.cart_btn {
   border: none;
   background: transparent;
   margin: 0;
 }
 
-.dropdown_btn img {
+.cart_btn img {
   width: 40px;
 }
 
@@ -43,34 +43,82 @@
   cursor: pointer;
   background: var(--lgrey);
 }
+
+
+/* Hide dropdown by default */
 .dropdown {
   display: none;
   position: absolute;
-  top: 4.5rem;
+  top: 4rem;
   right: 1rem;
   background-color: white;
   border-radius: 0.5rem;
-  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  min-width: 160px;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
+
+/* Show dropdown when active (add class from JS) */
+.dropdown.show {
+  display: block;
+}
+
+/* Remove bullets and padding */
 .dropdown ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+/* Dropdown items */
 .dropdown ul li {
-  padding: 0.5rem;
   width: 100%;
 }
-.dropdown ul a {
-  text-decoration: none;
+
+.dropdown ul li a {
+  display: block;
+  padding: 0.75rem 1rem;
   color: black;
-  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
-.dropdown ul a:hover {
+
+/* Hover effects */
+.dropdown ul li:hover {
+  background-color: var(--purple);
+}
+
+.dropdown ul li:hover a {
   color: white;
 }
-.dropdown ul li:hover {
-  background: var(--purple);
+
+/* Button styling */
+.dropdown_btn {
+  border: none;
+  background: transparent;
+  padding: 0 3px;
+  cursor: pointer;
 }
+
+.dropdown_btn:focus {
+  outline: none;
+}
+
+.dropdown_btn span {
+  font-size: 24px;
+}
+
+/* Optional: Adjust for smaller screens */
+@media (max-width: 480px) {
+  .dropdown {
+    top: 3.5rem;
+    right: 0.5rem;
+    min-width: 140px;
+  }
+}
+
 
 .model {
   display: flex;
@@ -85,3 +133,5 @@
     display: none;
   }
 }
+
+
