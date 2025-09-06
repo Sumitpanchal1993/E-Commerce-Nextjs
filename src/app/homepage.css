@@ -4,6 +4,9 @@
 }
 
 /* ----------Shop by category ------------ */
+.categorySection{
+  margin: 2rem 0;
+}
 
 .category{
   display: flex;
