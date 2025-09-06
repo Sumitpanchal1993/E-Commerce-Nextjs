@@ -11,8 +11,9 @@ export const GlobalProvider = ({ children }) => {
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(true);
   const [cartItems, setCartItems] = useState([]);
+  // const [isDeviceMobile, setIsDeviceMobile] = useState(isMobile());
   
 
 
@@ -36,7 +37,12 @@ export const GlobalProvider = ({ children }) => {
   const duplicateCartItems = (item) => {
     setCartItems(prevItems => [...prevItems, item]);
   };
-
+// Check for devicetype
+  function isMobile() {
+  const isSmallScreen = window.innerWidth <= 768;
+  const isMobileUA = /Mobi|Android|iPhone/i.test(navigator.userAgent);  
+  return isSmallScreen || isMobileUA;
+}
 
   // ✅ Declare contextData properly
   const contextData = {
@@ -49,7 +55,7 @@ export const GlobalProvider = ({ children }) => {
     error,
     setError,
     loading, 
-    setLoading,isAdmin, setIsAdmin,handleLogout
+    setLoading,isAdmin, setIsAdmin,handleLogout,
   };
 
   return (

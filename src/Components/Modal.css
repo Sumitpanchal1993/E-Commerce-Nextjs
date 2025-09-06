@@ -1,28 +1,61 @@
-/* components/Modal.css */
-
-/* Background overlay */
+/* Overlay that centers modal */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  /* padding: 10px; */
+  overflow-y: auto; /* Ensure modal scrolls if taller than screen */
 }
 
 /* Modal container */
 .modal-container {
   background-color: var(--bodybg);
-  width: 80%;
+  width: 100%;
   max-width: 500px;
   border-radius: 10px;
   position: relative;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  max-height: 90vh; /* Total modal height */
+  /* overflow: hidden; */
+}
+
+/* Title stays fixed */
+.modal-title {
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background: var(--purple);
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Scrollable content */
+.modal-content {
+  padding: 20px;
+  /* overflow-y: auto; */
+  flex-grow: 1; /* Takes all available space between title and footer */
+}
+
+/* Footer stays fixed at bottom */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+  background: var(--bodybg);
+  border-top: 1px solid #ccc;
+  flex-shrink: 0;
 }
 
 /* Close button */
@@ -40,49 +73,19 @@
 }
 
 .modal-close:hover {
-  /* color: var(--orange); */
-   border: 1px solid white;
+  border: 1px solid white;
 }
 
-/* Title */
-.modal-title {
-    padding:15px 20px; ;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  background: var(--purple);
-    color: white;
-}
-
-/* Modal content */
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  /* font-size: 16px; */
-  margin-bottom: 20px;
-}
-
-/* Footer buttons container */
-.modal-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 10px;
-}
-
-
-
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .modal-container {
     max-height: 90vh;
-    overflow: auto;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .modal-container {
-    width: 100%;
+    border-radius: 6px;
   }
 }

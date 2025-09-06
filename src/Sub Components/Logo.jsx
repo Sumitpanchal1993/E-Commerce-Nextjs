@@ -1,16 +1,18 @@
-
 "use client";
 import React from "react";
 import Link from "next/link";
-import './Logo.css'
+import "./Logo.css";
 
 function Logo() {
   return (
     <>
       <div className="topLogo">
-        <Link href='/' >
+        <Link href="/">
           <span className="material-symbols-outlined">Storefront</span>
-          <h4>Gift Gallery</h4>
+          <div>
+            <h4>Gift</h4>
+            <h4>Gallery</h4>
+          </div>
         </Link>
       </div>
     </>

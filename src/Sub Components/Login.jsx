@@ -1,18 +1,21 @@
-'use client";'
+"use client";
+
 import React, { useRef, useState } from "react";
 import "./Login.css";
 import { useGlobalStore } from "@/Store/GlobalStore";
+import UserSignupForm from "./UserSignupForm";
 
 function Login({ closeModal }) {
   const { isLoggedIn, setIsLoggedIn } = useGlobalStore();
   const username = useRef();
   const userPassword = useRef();
   const [error, setError] = useState("");
+  const [signup, setSignup] = useState(false);
 
   const validateEmail = (val) =>
     val.includes("@") && val.includes(".") && !val.includes(" ");
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = async (e) => {
     e.preventDefault();
     const emailVal = username.current.value.trim();
     const passVal = userPassword.current.value.trim();
@@ -27,18 +30,41 @@ function Login({ closeModal }) {
       return;
     }
 
-    // Simulate login
-    const userDetail = {
-      username: emailVal,
-      password: passVal,
-    };
+    try {
+      // Simulated API login
+      const response = await fetch("https://dummyjson.com/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          // username: emailVal,
+          // password: passVal,
+          username: "emilys",
+          password: "emilyspass",
+          expiresInMins: 30, // optional, defaults to 60
+        }),
+        // credentials: "include", // Include cookies (if needed)
+      });
 
-    console.log("User Logged In:", userDetail);
-    setIsLoggedIn(true);
-    closeModal?.(false);
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log("Login Success:", result);
+        setIsLoggedIn(true);
+        closeModal?.(false);
+      } else {
+        setError(result.message || "Login failed.");
+      }
+    } catch (err) {
+      console.error("Login Error:", err);
+      setError("An error occurred. Please try again.");
+    }
   };
 
   return (
+    <>
+    {signup ? (
+      <UserSignupForm setSignup={setSignup} />
+    ) : (
     <form className="loginBase" onSubmit={handleOnSubmit}>
       <h2>Login to Your Account</h2>
 
@@ -72,16 +98,12 @@ function Login({ closeModal }) {
         Login
       </button>
 
-      <button className="spbtn-secondary" type="button">
+      <button className="spbtn-secondary" type="button" onClick={() => setSignup(true)}>
         Sign Up
       </button>
-    </form>
+    </form>)}
+    </>
   );
 }
 
 export default Login;
-
-
-
-
-

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   /* background-color: #f9fafb; */
   min-height: 80vh;
 }
@@ -51,9 +51,10 @@
   font-size: 14px;
 }
 
-.formFooter a {
+.formFooter span {
   color: #1976d2;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .formFooter a:hover {

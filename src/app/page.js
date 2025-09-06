@@ -50,7 +50,7 @@ const ageGroup = [
 ];
 
 export default function Home() {
-  const {error} = useGlobalStore();
+  const {error,isDeviceMobile} = useGlobalStore();
  
   return (
     <>

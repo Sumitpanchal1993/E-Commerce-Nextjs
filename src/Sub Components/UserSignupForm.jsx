@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./UserSignupForm.css";
 
-function UserSignupForm() {
+function UserSignupForm({ setSignup }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +21,7 @@ function UserSignupForm() {
     setSuccess("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password, confirmPassword } = formData;
 
@@ -39,6 +39,23 @@ function UserSignupForm() {
     console.log("User signed up:", formData);
     setSuccess("Signup successful!");
     setFormData({ name: "", email: "", password: "", confirmPassword: "" });
+
+    try {
+      const response = await fetch("https://dummyjson.com/users/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: name,
+          email: email,
+          password: password,
+          /* other user data */
+        }),
+      })
+        .then((res) => res.json())
+        .then(console.log);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSocialLogin = (platform) => {
@@ -86,22 +103,38 @@ function UserSignupForm() {
           onChange={handleChange}
         />
 
-        <button className="spbtn-primary" type="submit">Sign Up</button>
+        <button className="spbtn-primary" type="submit">
+          Sign Up
+        </button>
 
-        <div className="formFooter">
-          <p>Already have an account? <a href="/login">Login here</a></p>
+        <div className="formFooter" onClick={() => setSignup(false)}>
+          <p>
+            Already have an account?<span> Login here</span>{" "}
+          </p>
         </div>
 
         <div className="socialLogin">
           <p>Or sign up with</p>
           <div className="socialButtons">
-            <button type="button" className="google" onClick={() => handleSocialLogin("Google")}>
+            <button
+              type="button"
+              className="google"
+              onClick={() => handleSocialLogin("Google")}
+            >
               🔵 Google
             </button>
-            <button type="button" className="facebook" onClick={() => handleSocialLogin("Facebook")}>
+            <button
+              type="button"
+              className="facebook"
+              onClick={() => handleSocialLogin("Facebook")}
+            >
               🔷 Facebook
             </button>
-            <button type="button" className="github" onClick={() => handleSocialLogin("GitHub")}>
+            <button
+              type="button"
+              className="github"
+              onClick={() => handleSocialLogin("GitHub")}
+            >
               ⚫ GitHub
             </button>
           </div>
