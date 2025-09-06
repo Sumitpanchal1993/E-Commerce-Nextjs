@@ -27,7 +27,8 @@
 .toggle-button {
   cursor: pointer;
   align-self: flex-end;
-  padding: 0.5rem;
+  padding: 0.5rem;  
+ border: 1px solid transparent;
 }
 
 .toggle-button:hover{

@@ -5,11 +5,12 @@ import './LeftNav.css';
 import { useGlobalStore } from '@/Store/GlobalStore';
 
 const menuList = [
-  { title: 'Dashboard', icon: 'dashboard', link: '/' },
-  { title: 'All Products', icon: 'deployed_code', link: 'all_products' },
-  { title: 'Orders', icon: 'home_storage', link: '/orders' },
-  { title: 'Favorite', icon: 'favorite', link: '/favourite' },
+  { title: 'Home', icon: 'home', link: '/' },
   { title: 'New Arrivals', icon: 'verified', link: '/newarrivals' },
+  { title: 'All Products', icon: 'deployed_code', link: 'all_products' },
+  { title: 'Category', icon: 'category', link: '/orders' },
+  { title: 'Brands', icon: 'loyalty', link: '/favourite' },
+  { title: 'sale', icon: 'percent_discount', link: '/favourite' },
 ];
 
 function LeftNav() {
